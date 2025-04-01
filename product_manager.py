@@ -16,3 +16,7 @@ class ProductManager:
     def total_inventory_value(self):
         "Calculeaza valoarea totala a inventarului."
         return sum(product.price * product.quantity for product in self.products)
+    
+    def remove_product(self, product_name):
+        "Elimina un produs din lista dupa nume."
+        self.products = [product for product in self.products if product.name != product_name]
